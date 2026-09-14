@@ -14,3 +14,16 @@ var hasCycle = function(head) {
     }
     return false; // 访问到了链表末尾，无环
 };
+
+//0（n）
+var hasCycle = function(head) {
+    const sets = new Set()
+    let temp = head
+    while(temp !== null){
+        if(sets.has(temp)) return temp
+        sets.add(temp)
+        temp = temp.next
+    }
+    return false
+    
+};
